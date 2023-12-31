@@ -27,8 +27,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     exit()
                 number = number + 1
                 print('{} data : {}, addr: {}' .format(number, data, addr))
+                break
                 # クライアントにデータを返す
                 # (b -> byte でないといけない)
-                break
                 
             conn.send(b'Received: ' + data)

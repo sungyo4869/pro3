@@ -1,15 +1,16 @@
 import sys
 import io
 
+from datetime import datetime
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 print('Content-type: text/html; charset=UTF-8\r\n')
 print("<head>")
 print('<meta http-equiv="Content-type" content ="text/html; charset=UTF-8">')
-print("<title>テスト DGI</title>")
+print("<title>ただいまの日時</title>")
 print("</head>")
 print("<body>")
-print("<h1>Hello CGI world!</h1>")
-print("<h2>日本語の表示はうまくいくかな？</h2>")
+print("<p>ただいまの日時 : %s</p>"%datetime.now().strftime("%Y/%m/%d %H:%M:%S"))
 print("</body>")
 print("</html>")

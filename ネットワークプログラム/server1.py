@@ -2,6 +2,7 @@ import socket
 
 ipaddr = '127.0.0.1'
 port = 50007
+number = 0
 
 # ソケットを作成
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -21,9 +22,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if not data:
                     print("データないよ")
                     break
-                print('data : {}, addr: {}' .format(data, addr))
+                elif data.decode('utf-8') == 'stop' :
+                    print("プログラムを終了します")
+                    exit()
+                number = number + 1
+                print('{} data : {}, addr: {}' .format(number, data, addr))
+                break
                 # クライアントにデータを返す
                 # (b -> byte でないといけない)
-                break
                 
             conn.send(b'Received: ' + data)

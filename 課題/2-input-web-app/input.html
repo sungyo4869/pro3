@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>フォームサンプル</title>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form method="get" action="cgi-bin/input.py">
+            <p>名前は？<input type="text" name="simei"/></p>
+            <p>年齢は？<input type="text" name="age"/></p>
+            
+            <p>学科は？
+                <ul>
+                    <li><input type="radio" name="gakka" value="ms"/>機械システム工学科</li>
+                    <li><input type="radio" name="gakka" value="ic"/>情報通信システム工学科</li>
+                    <li><input type="radio" name="gakka" value="mi"/>メディア情報工学科</li>
+                    <li><input type="radio" name="gakka" value="br"/>生物資源工学科</li>
+                </ul>
+            </p>
+            <p>
+                <input type="submit" value="送信"/>
+            </p>
+        </form>
+    </body>
+</html>

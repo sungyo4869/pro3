@@ -4,7 +4,7 @@ import sys
 # ファイルの中身を定義する関数
 def create_table(n):
     wb = openpyxl.Workbook()
-    sheet = workbook.active
+    sheet = wb.active
 
     # ヘッダー行の作成
     for i in range(1, n+1):

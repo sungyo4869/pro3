@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import japanize_matplotlib
 
 temp = [18.1, 20.2, 19.9, 22.3, 24.2, 26.5, 28.9, 29.2, 28.0, 26.0, 23.1, 20.0]
 

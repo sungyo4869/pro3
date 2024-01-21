@@ -15,4 +15,16 @@ plt.plot(months, temp[1999])
 plt.plot(months, temp[2009])
 plt.plot(months, temp[2019])
 
+# 凡例の追加
+plt.legend([1999, 2009, 2019])
+# 表題の追加
+plt.title("沖縄の月別平均気温")
+# x軸、y軸のラベルを追加
+plt.xlabel("月")
+plt.ylabel("気温[℃]")
+# x軸、y軸の最大値、最小値を設定
+plt.axis(xmin=-0.5,xmax=11.5,ymin=0,ymax=35)
+# グリッドラインを表示
+plt.grid()
+
 plt.show()

@@ -19,16 +19,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             while True:
                 # データを受け取る
                 data = conn.recv(1024)
-                if not data:
-                    print("データないよ")
-                    break
-                elif data.decode('utf-8') == 'stop' :
-                    print("プログラムを終了します")
-                    exit()
-                number = number + 1
+                    
                 print('{} data : {}, addr: {}' .format(number, data, addr))
                 break
-                # クライアントにデータを返す
-                # (b -> byte でないといけない)
                 
             conn.send(b'Received: ' + data)
+            
+            if data == b'stop':
+                exit()

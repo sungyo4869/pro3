@@ -26,10 +26,11 @@ def scrape_data(html):
             continue
         temperature_list = []
         for i in range(1, 13):
+            # 各セルのデータをとってくる
             cell = row.select('td')[i].text
-                        
+            # データをチェック
             cell = clean_temperature_data(cell)
-        
+            # append
             temperature_list.append(cell)
             
         temperature_dict[year] = temperature_list

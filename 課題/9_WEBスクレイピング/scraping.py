@@ -8,7 +8,7 @@ def try_fetch_url(url):
     if res.status_code == 200:
         return res.text
     else:
-        print(f"Failed to fetch the data. Status code: {response.status_code}")
+        print(f"Failed to fetch the data. Status code: {res.status_code}")
         return None
 
 # データ取り出す
@@ -39,11 +39,13 @@ def scrape_data(html):
     return temperature_dict
 
 def clean_temperature_data(temperature_str):
-    if temperature_str.strip() == '\u3000' or temperature_str.strip() == '×':
-        print("きてるよ")
-        return "None"
+    temp_pattern = '^(\d)+\.(\d)+'
+    
+    result = re.match(temp_pattern, temperature_str)
+    if result:
+        return(result.group())
     else:
-        return re.sub(r'[^\d.-]', '', temperature_str)
+        return(None)
 
     
 if __name__ == "__main__":
